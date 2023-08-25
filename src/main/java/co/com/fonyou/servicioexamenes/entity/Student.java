@@ -14,7 +14,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String name;
+	private String firstName;
 	
 	private int age;
 	
@@ -29,11 +29,11 @@ public class Student {
 	}
 
 	public String getName() {
-		return name;
+		return firstName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.firstName = name;
 	}
 
 	public int getAge() {
@@ -54,7 +54,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", city=" + city + "]";
+		return "Student [id=" + id + ", name=" + firstName + ", age=" + age + ", city=" + city + "]";
 	}
 
 

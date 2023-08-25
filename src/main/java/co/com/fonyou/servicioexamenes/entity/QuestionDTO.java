@@ -1,18 +1,16 @@
 package co.com.fonyou.servicioexamenes.entity;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "question")
-public class Question {
-
+public class QuestionDTO {
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -29,9 +27,6 @@ public class Question {
 
 	private String correct_option;
 
-	@ManyToMany(mappedBy = "questions")
-	private List<Exam> exams;
-
 	public int getId() {
 		return id;
 	}
@@ -40,12 +35,12 @@ public class Question {
 		this.id = id;
 	}
 
-	public String getDescription() {
+	public String getDescription_q() {
 		return description_q;
 	}
 
-	public void setDescription(String description) {
-		this.description_q = description;
+	public void setDescription_q(String description_q) {
+		this.description_q = description_q;
 	}
 
 	public String getOption_a() {
@@ -88,19 +83,13 @@ public class Question {
 		this.correct_option = correct_option;
 	}
 
-	public List<Exam> getExams() {
-		return exams;
-	}
-
-	public void setExams(List<Exam> exams) {
-		this.exams = exams;
-	}
-
 	@Override
 	public String toString() {
-		return "Question [id=" + id + ", description=" + description_q + ", option_a=" + option_a + ", option_b="
+		return "QuestionDTO [id=" + id + ", description_q=" + description_q + ", option_a=" + option_a + ", option_b="
 				+ option_b + ", option_c=" + option_c + ", option_d=" + option_d + ", correct_option=" + correct_option
-				+ ", exams=" + exams + "]";
+				+ "]";
 	}
+	
+	
 
 }
