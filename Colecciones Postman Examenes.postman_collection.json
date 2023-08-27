@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "c58cfe99-5736-4144-87fb-32745fdc7204",
+		"name": "Colecciones Postman Examenes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/student/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Maria Perez\",\r\n    \"age\" : 32,\r\n    \"city\" : \"Cali\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"create"
+					]
+				},
+				"description": "Request para la creación de un estudiante."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/question/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\" : \"Cual de los siguiente no es un lenguaje programacion\",\r\n    \"optionA\" : \"java\",\r\n    \"optionB\" : \"C++\",\r\n    \"optionC\" : \"JavaScript\",\r\n    \"optionD\" : \"CSS\",\r\n    \"optionOk\" : \"D\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/question/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"question",
+						"create"
+					]
+				},
+				"description": "Request para la creación y registro de una pregunta."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/exam/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idEstudiante\" : 3,\r\n    \"questions\" : [1,2,4]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/exam/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exam",
+						"create"
+					]
+				},
+				"description": "Request para la creación y asignación de un examen a un estudiante."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/exam/getByStudent/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exam/getByStudent/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exam",
+						"getByStudent",
+						"1"
+					]
+				},
+				"description": "Request para obtener un examen completo por id de estudiante."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/exam/answerExam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idStudent\": 1,\r\n    \"answers\": [\r\n        {\r\n            \"idQuestion\": 2,\r\n            \"selected\": \"C\"\r\n        },\r\n        {\r\n            \"idQuestion\": 3,\r\n            \"selected\": \"D\"\r\n        },\r\n        {\r\n            \"idQuestion\": 5,\r\n            \"selected\": \"D\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/exam/answerExam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exam",
+						"answerExam"
+					]
+				},
+				"description": "Request para responder un examen con las respuestas seleccionadas."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/student/getAnswersByStudent/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/student/getAnswersByStudent/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"getAnswersByStudent",
+						"1"
+					]
+				},
+				"description": "Request para obtener las respuestas seleccionadas por un estudiante."
+			},
+			"response": []
+		}
+	]
+}
